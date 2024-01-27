@@ -4,6 +4,7 @@ import com.elyashevich.store.dto.commentDto.CommentCreateDto;
 import com.elyashevich.store.dto.commentDto.CommentUpdateDto;
 import com.elyashevich.store.entity.Comment;
 import com.elyashevich.store.service.CommentService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
+@Tag(name="comment_controller")
 @RestController
 @RequestMapping("/api/v1/comments")
 @RequiredArgsConstructor

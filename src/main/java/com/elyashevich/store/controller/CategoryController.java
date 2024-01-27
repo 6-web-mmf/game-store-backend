@@ -3,6 +3,7 @@ package com.elyashevich.store.controller;
 import com.elyashevich.store.dto.categoryDto.CategoryCreateDto;
 import com.elyashevich.store.entity.Category;
 import com.elyashevich.store.service.CategoryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @Slf4j
+@Tag(name="category_controller")
 @RestController
 @RequestMapping("/api/v1/categories")
 @RequiredArgsConstructor

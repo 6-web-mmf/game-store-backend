@@ -4,6 +4,7 @@ import com.elyashevich.store.dto.authDto.SignUpDto;
 import com.elyashevich.store.dto.userDto.UserUpdateDto;
 import com.elyashevich.store.entity.User;
 import com.elyashevich.store.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.util.List;
 
+@Tag(name="user_controller")
 @RestController
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor

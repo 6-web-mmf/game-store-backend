@@ -4,6 +4,7 @@ import com.elyashevich.store.dto.authDto.LoginDto;
 import com.elyashevich.store.dto.authDto.LoginResponseDto;
 import com.elyashevich.store.dto.authDto.SignUpDto;
 import com.elyashevich.store.service.AuthService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
+@Tag(name="auth_controller")
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
