@@ -6,6 +6,7 @@ import com.elyashevich.store.entity.User;
 import com.elyashevich.store.exception.NotFoundException;
 import com.elyashevich.store.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +20,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -50,6 +52,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         final List<Role> roles = new ArrayList<>();
         roles.add(Role.ROLE_USER);
         user.setRoles(roles);
+        log.info("CREATE NEW USER\n" + user);
         return userRepository.save(user);
     }
 }

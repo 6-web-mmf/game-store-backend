@@ -8,10 +8,12 @@ import com.elyashevich.store.mapper.GameMapper;
 import com.elyashevich.store.repository.GameRepository;
 import com.elyashevich.store.service.GameService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class GameServiceImpl implements GameService {
@@ -22,11 +24,13 @@ public class GameServiceImpl implements GameService {
     @Override
     public Game create(GameCreateDto gameCreateDto) {
         final Game game = gameMapper.convert(gameCreateDto);
+        log.info("CREATE NEW GAME\n" + game);
         return gameRepository.save(game);
     }
 
     @Override
     public Game findById(String id) {
+        log.info("FIND GAME BY ID");
         return gameRepository.findById(id).orElseThrow(() ->
                 new NotFoundException(String.format("Game with id = %s wasn't found", id)));
     }
@@ -39,11 +43,13 @@ public class GameServiceImpl implements GameService {
         game.setPrice(gameUpdateDto.price());
         game.setViews(gameUpdateDto.views());
         game.setRating(gameUpdateDto.rating());
+        log.info("UPDATE GAME\n" + game);
         return gameRepository.save(game);
     }
 
     @Override
     public List<Game> findAll(String q) {
+        log.info("FIND ALL GAMES");
         if (!q.isEmpty()) {
             return gameRepository.findByQueryTitle(q.toLowerCase());
         }
@@ -53,6 +59,7 @@ public class GameServiceImpl implements GameService {
     @Override
     public void delete(String id) {
         final Game game = findById(id);
+        log.info("DELETE GAME\n" + game);
         gameRepository.delete(game);
     }
 }

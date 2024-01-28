@@ -64,8 +64,6 @@
       <artifactId>jjwt-api</artifactId>
       <version>0.11.5</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
-    <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -81,7 +79,6 @@
       <artifactId>jjwt-jackson</artifactId>
       <version>0.11.5</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -110,7 +107,6 @@
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
             </exclude>
-
           </excludes>
         </configuration>
       </plugin>

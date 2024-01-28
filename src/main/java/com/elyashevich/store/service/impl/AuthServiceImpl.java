@@ -28,6 +28,7 @@ public class AuthServiceImpl implements AuthService {
                 );
         UserDetails userDetails = userService.loadUserByUsername(authRequest.username());
         String token = JwtToken.generateToken(userDetails);
+        log.info("SIGN IN");
         return LoginResponseDto
                 .builder()
                 .token(token)
@@ -38,6 +39,7 @@ public class AuthServiceImpl implements AuthService {
         User user = userService.createNewUser(registrationUserDto);
         UserDetails userDetails = userService.loadUserByUsername(registrationUserDto.username());
         String token = JwtToken.generateToken(userDetails);
+        log.info("SIGN UP");
         return LoginResponseDto.builder()
                 .token(token)
                 .build();

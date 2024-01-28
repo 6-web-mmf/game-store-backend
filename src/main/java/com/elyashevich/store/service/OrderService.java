@@ -1,5 +1,6 @@
 package com.elyashevich.store.service;
 
+import com.elyashevich.store.dto.gameDto.GameCreateDto;
 import com.elyashevich.store.dto.orderDto.OrderCreateDto;
 import com.elyashevich.store.entity.Order;
 
@@ -13,9 +14,7 @@ public interface OrderService {
 
     Order findById(String id);
 
-    /* @Todo implements purchase method */
-
-    Order purchase();
+    void purchase(String gameId, String userId, String orderId);
 
     void delete(String id);
 }
