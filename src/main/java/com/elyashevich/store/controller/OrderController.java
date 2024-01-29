@@ -14,7 +14,7 @@ import java.util.List;
 @Tag(name="order_controller")
 @RestController
 @RequestMapping("/api/v1/orders")
-@CrossOrigin(origins = "https://6-web-mmf.github.io")
+@CrossOrigin(origins = {"https://6-web-mmf.github.io", "http://127.0.0.1:5173/"})
 @RequiredArgsConstructor
 public class OrderController {
 
@@ -37,8 +37,12 @@ public class OrderController {
     }
 
     @PatchMapping("/{id}")
-    public Order update(final @PathVariable String id, final @RequestBody @Valid OrderCreateDto orderCreateDto) {
-        return orderService.purchase(, );
+    public void update(
+            final @PathVariable String orderId,
+            final @RequestParam String userId,
+            final @RequestParam String gameId
+    ) {
+        orderService.purchase(gameId, userId, orderId);
     }
 
     @DeleteMapping("/{id}")

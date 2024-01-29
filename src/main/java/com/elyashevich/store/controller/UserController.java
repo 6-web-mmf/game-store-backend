@@ -16,7 +16,7 @@ import java.util.List;
 @Tag(name="user_controller")
 @RestController
 @RequestMapping("/api/v1/users")
-@CrossOrigin(origins = "https://6-web-mmf.github.io")
+@CrossOrigin(origins = {"https://6-web-mmf.github.io", "http://127.0.0.1:5173/"})
 @RequiredArgsConstructor
 public class UserController {
 
